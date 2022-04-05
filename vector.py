@@ -47,6 +47,6 @@ class Vector ( object ):
       if i != len( self.vector ) - 1:
         vec += " , "
     
-    vec += "]"
+    vec += " ]"
     
     return vec
