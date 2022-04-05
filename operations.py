@@ -3,21 +3,6 @@ from vector import *
 from matrix import *
 
 
-# Adds two vectors of same size together
-# Returns new vector
-def addVectors ( u , v ):
-  if u.getSize() != v.getSize():
-    print( "Vectors cannot be added due to differing sizes" )
-
-    return
-  
-  vec = Vector( u.getSize() )
-  for i in range( 1 , u.getSize() + 1 ):
-    vec.vector[i - 1] = u.getEntry( i ) + v.getEntry( i )
-
-  return vec
-
-
 # Subtracts two vectors of same size
 # Returns new vector
 def subtractVectors ( u , v ):

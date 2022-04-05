@@ -71,6 +71,21 @@ class Vector ( object ):
       dot_product += entry ** 2
 
     return sqrt( dot_product )
+  
+
+  # Adds two vectors of same size together
+  # Returns new vector
+  def __add__ ( self , other ):
+    if self.getSize() != other.getSize():
+      print( "Vectors cannot be added due to differing sizes" )
+
+      return
+  
+    vec = Vector( self.getSize() )
+    for i in range( 1 , self.getSize() + 1 ):
+      vec.vector[i - 1] = self.getEntry( i ) + other.getEntry( i )
+
+    return vec
 
 
   # Checks whether two vectors are equal or not
