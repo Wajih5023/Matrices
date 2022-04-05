@@ -66,14 +66,32 @@ class Matrix( object ):
 
   # Returns number of entries in each column as integer
   def getNumOfEntries ( self ):
-    return self.matrix[0].getSize()
+    return self.getVector( 1 ).getSize()
 
 
   # Returns number of column in matrix as integer
   def getNumOfVectors ( self ):
     return len( self.matrix )
+
+
+  # Returns the dimensions of the matrix as two integers
+  def getDimensions ( self ):
+    return self.getNumOfEntries() , self.getNumOfVectors()
   
 
+  # Checks whether matrix is zero matrix or not
+  # Returns boolean
+  def isZeroMatrix( self ):
+    for vec in self.matrix:
+      if not vec.isZeroVector():
+        return False
+    
+    return True
+
+  # Checks whether matrix contains given vector
+  # Returns boolean
+  def hasVector( self , vec ):
+    return
   # Returns string form of matrix
   def __str__ ( self ):
     mat_str = ""
