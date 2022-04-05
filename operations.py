@@ -65,12 +65,14 @@ def distance ( u , v ):
 
   return u_minus_v.length()
 
+
 # Finds angle between two non-zero vectors
 # Returns the angle as float
 def angle ( u , v ):
   dot_product = dotProduct( u , v ) / ( u.length() * v.length() )
 
   return acos( dot_product )
+
 
 # Checks whether two vectors are orhogonal or not
 # Returns boolean

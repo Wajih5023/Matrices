@@ -4,7 +4,7 @@ from math import sqrt
 # Represents a vector
 class Vector ( object ):
 
-  
+
   # Creates zero vector of given length
   def __init__ ( self , size = 2 ):
     self.vector = []
@@ -32,6 +32,16 @@ class Vector ( object ):
     self.vector.append( entry )
 
   
+  # Returns entry at specified position as integer
+  def getEntry ( self , index ):
+    if index <= 0 or index > self.getSize():
+      print( "Out of Range" )
+      
+      return
+
+    return self.vector[index - 1]
+    
+
   # Returns number of entries in vector
   def getSize ( self ):
     return len( self.vector )
@@ -60,14 +70,9 @@ class Vector ( object ):
       
   # Returns string form of vector
   def __str__ ( self ):
-    vec = "[ "
+    vec_str = ""
 
-    for i in range( len( self.vector ) ):
-      vec += str( self.vector[i] )
-
-      if i != len( self.vector ) - 1:
-        vec += " , "
+    for entry in self.vector:
+      vec_str += "[ " + str( entry ) + " ]\n"
     
-    vec += " ]"
-    
-    return vec
+    return vec_str
