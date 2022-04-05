@@ -29,7 +29,7 @@ class Matrix( object ):
     for i in range( self.getNumOfColumns() ):
       self.matrix[i] = vec_list[i]
   
-  
+
   # Changes current matrix to zero matrix
   def reset( self ):
     m , n = self.getDimensions()
@@ -87,7 +87,7 @@ class Matrix( object ):
 
   # Checks whether matrix is zero matrix or not
   # Returns boolean
-  def isZeroMatrix( self ):
+  def isZeroMatrix ( self ):
     for vec in self.matrix:
       if not vec.isZeroVector():
         return False

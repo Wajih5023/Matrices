@@ -24,7 +24,7 @@ class Vector ( object ):
       return
     
     for i in range( len( self.vector ) ):
-      self.vector[i] = list[i]
+      self.vector[i] = int( list[i] )
 
   
   # Changes current vector into zero vector

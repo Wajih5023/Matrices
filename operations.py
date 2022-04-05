@@ -44,6 +44,22 @@ def scalarMultiplyVector ( v , k ):
   return vec
 
 
+# Divides vector by scalar k
+# Returns new vector
+def scalarDivideVector ( v , k ):
+  vec = Vector( v.getSize() )
+
+  for i in range( 1 , v.getSize() + 1 ):
+    if v.getEntry( i ) % k != 0:
+      print( "Vector cannot be divided by scalar k evenly" )
+
+      return
+
+    vec.vector[i - 1] = int( v.getEntry( i ) / k )
+  
+  return vec
+
+
 # Adds two matrices of same dimensions together
 # Returns new matrix
 def addMatrices ( a , b ):
@@ -88,6 +104,23 @@ def scalarMultiplyMatrix ( a , k ):
 
   for i in range( 1 , n + 1 ):
     mat.matrix[i - 1] = scalarMultiplyVector( a.getVector( i ) , k )
+  
+  return mat
+
+
+# Divides matrix by scalar k
+# Returns new matrix
+def scalarDivideMatrix ( a , k ):
+  m , n = a.getDimensions()
+  mat = Matrix( m , n )
+
+  for i in range( 1 , n + 1 ):
+    mat.matrix[i - 1] = scalarDivideVector( a.getVector( i ) , k )
+
+    if mat.matrix[i - 1] is None:
+      print( "Matrix cannot be divided by scalar k evenly" )
+
+      return
   
   return mat
 
