@@ -52,5 +52,10 @@ def dotProduct( u , v ):
   
   return dot_product
 
+# Checks whether two vectors are orhogonal or not
+# Returns boolean
+def areOrthogonal ( u , v ):
+  return dotProduct( u , v ) == 0
+
   
      
