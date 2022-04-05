@@ -25,4 +25,5 @@ mat2 = Matrix( 3 , 3 )
 mat2.createMatrix( [v2 , v4 , v3] )
 #print( mat2 )
 
-print( v2 + v1 ) 
+print( v2 - v1 ) 
+print( v1 - v2 )

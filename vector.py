@@ -87,6 +87,21 @@ class Vector ( object ):
 
     return vec
 
+  
+  # Subtracts two vectors of same size
+  # Returns new vector
+  def __sub__ ( self , other ):
+    if self.getSize() != other.getSize():
+      print( "Vectors cannot be subtracted due to differing sizes" )
+
+      return
+  
+    vec = Vector( self.getSize() )
+    for i in range( 1 , self.getSize() + 1 ):
+      vec.vector[i - 1] = self.getEntry( i ) - other.getEntry( i )
+
+    return vec
+
 
   # Checks whether two vectors are equal or not
   # Returns boolean
