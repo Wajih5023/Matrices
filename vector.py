@@ -26,6 +26,11 @@ class Vector ( object ):
     for i in range( len( self.vector ) ):
       self.vector[i] = list[i]
 
+  
+  # Changes current vector into zero vector
+  def reset ( self ):
+    self.__init__( self.getSize() )
+
 
   # Adds new entry to vector
   def addEntry ( self , entry ):
@@ -66,6 +71,19 @@ class Vector ( object ):
       dot_product += entry ** 2
 
     return sqrt( dot_product )
+
+
+  # Checks whether two vectors are equal or not
+  # Returns boolean
+  def __eq__ ( self , other ):
+    if self.getSize() != other.getSize():
+      return False
+
+    for i in range( 1 , self.getSize() + 1 ):
+      if self.getEntry( i ) != other.getEntry( i ):
+        return False
+    
+    return True
 
       
   # Returns string form of vector

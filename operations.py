@@ -1,6 +1,6 @@
 from math import acos
-from matrix import *
 from vector import *
+from matrix import *
 
 
 # Adds two vectors of same size together
@@ -88,6 +88,31 @@ def scalarMultiplyMatrix ( a , k ):
 
   for i in range( 1 , n + 1 ):
     mat.matrix[i - 1] = scalarMultiplyVector( a.getVector( i ) , k )
+  
+  return mat
+
+
+# Multiplies two matrices together
+# Returns new matrix
+def multiplyMatrix ( a , b ):
+  m1 , n1 = a.getDimensions()
+  m2 , n2 = b.getDimensions()
+
+  if m1 != n2 or m2 != n1:
+    print( "Matrices cannot be multiplied together" )
+
+    return
+
+  mat = Matrix( a.getNumOfRows() , b.getNumOfColumns() )
+  m , n = mat.getDimensions()
+
+  for row in range( 1 , m + 1 ):
+    num_list = a.getRow( row )
+    temp_row = Vector( len( num_list ) )
+    temp_row.createVector( num_list )
+
+    for col in range( 1 , n + 1 ):
+      mat.matrix[col - 1].vector[row - 1] = dotProduct( temp_row , b.getVector( col ) )
   
   return mat
 
