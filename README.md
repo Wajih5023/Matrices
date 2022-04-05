@@ -30,6 +30,7 @@ print( multiplyMatrixVector( mat , vec )
 
 ## Things to Note
 - This project is meant to deal with only integers. Any float or string arguments will be parsed into integers
+- This project should not be used as a calculator to use for your classwork. Please make sure you do your own course work as instructed by your professor
 
 ## Current Status
 Updated periodically with new functions to represent more concepts involving matrices.
