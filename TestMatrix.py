@@ -18,11 +18,11 @@ v4.createVector( [1 , 2 , 3] )
 #print( v4 )
 
 
-mat = Matrix( 3 , 3 )
-mat.createMatrix( [v3 , v3 , v3] )
+mat = Matrix( 3 , 2 )
+mat.createMatrix( [v1 , v3] )
 print( mat )
 mat2 = Matrix( 3 , 3 )
 mat2.createMatrix( [v2 , v4 , v3] )
 #print( mat2 )
 
-print( scalarDivideMatrix( mat , 3 ) ) 
+print( mat.transpose() ) 

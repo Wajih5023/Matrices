@@ -95,6 +95,21 @@ class Matrix( object ):
     return True
 
   
+  # Returns tranpose of matrix as Matrix object
+  def transpose ( self ):
+    m , n = self.getDimensions()
+    mat = Matrix( n , m )
+
+    for i in range( 1 , m + 1 ):
+      num_list = self.getRow( i )
+      new_vec = Vector( n )
+      new_vec.createVector( num_list )
+
+      mat.matrix[i - 1] = new_vec
+
+    return mat
+
+  
   # Checks whether two matrices are equal or not
   # Returns boolean
   def __eq__ ( self , other ):
