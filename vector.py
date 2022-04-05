@@ -1,6 +1,5 @@
 # Represents vector
 class Vector ( object ):
-
   # Creates zero vector of given length
   def __init__ ( self , size = 2 ):
     self.vector = []
@@ -40,9 +39,14 @@ class Vector ( object ):
 
   # Returns string form of vector
   def __str__ ( self ):
-    vec = ""
+    vec = "[ "
 
     for i in range( len( self.vector ) ):
-      vec += "[ " + str( self.vector[i] ) + " ]\n"
+      vec += str( self.vector[i] )
+
+      if i != len( self.vector ) - 1:
+        vec += " , "
+    
+    vec += "]"
     
     return vec
