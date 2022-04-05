@@ -4,7 +4,7 @@ from operations import *
 
 v1 = Vector( 3 )
 v1.createVector( [2 , 6 , 7] )
-#print( v1 )
+print( v1 )
 v2 = Vector( 3 )
 v2.createVector( [4 , 5 , 9] )
 #print( v2 )
@@ -18,11 +18,10 @@ v4.createVector( [1 , 2 , 3] )
 
 mat = Matrix( 3 , 3 )
 mat.createMatrix( [v1 , v2 , v3] )
-#print( mat )
+print( mat )
 mat2 = Matrix( 3 , 3 )
 mat2.createMatrix( [v2 , v4 , v3] )
 #print( mat2 )
 
-print( mat )
-mat.reset()
-print( mat )
+mat3 = Matrix( 2 , 2 )
+print( multiplyMatrixVector( mat , v1 ) )

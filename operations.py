@@ -117,6 +117,27 @@ def multiplyMatrix ( a , b ):
   return mat
 
 
+# Multiplies matrix and vector together
+# Returns new vector
+def multiplyMatrixVector ( mat , vec ):
+  m , n = mat.getDimensions()
+  
+  if n != vec.getSize():
+    print( "Matrix cannot be multiplied with vector" )
+
+    return
+  
+  new_vec = Vector( m )
+  for i in range( 1 , new_vec.getSize() + 1 ):
+    num_list = mat.getRow( i )
+    tempRow = Vector( len( num_list ) )
+    tempRow.createVector( num_list )
+
+    new_vec.vector[i - 1] = dotProduct( tempRow , vec )
+  
+  return new_vec
+
+
 # Finds dot product of two vectors
 # Returns dot product as integer
 def dotProduct ( u , v ):
