@@ -30,42 +30,6 @@ def scalarDivideVector ( v , k ):
   return vec
 
 
-# Adds two matrices of same dimensions together
-# Returns new matrix
-def addMatrices ( a , b ):
-  m1 , n1 = a.getDimensions()
-  m2 , n2 = a.getDimensions()
-
-  if m1 != m2 or n1 != n2:
-    print( "Matrices cannot be added due to differing dimensions" )
-
-    return
-  
-  mat = Matrix( m1 , n1 )
-  for i in range( 1 , n1 + 1 ):
-    mat.matrix[i - 1] = addVectors( a.getVector( i ) , b.getVector( i ) )
-
-  return mat
-
-
-# Subtracts two matrices of same dimensions
-# Returns new matrix
-def subtractMatrices ( a , b ):
-  m1 , n1 = a.getDimensions()
-  m2 , n2 = a.getDimensions()
-
-  if m1 != m2 or n1 != n2:
-    print( "Matrices cannot be added due to differing dimensions" )
-
-    return
-  
-  mat = Matrix( m1 , n1 )
-  for i in range( 1 , n1 + 1 ):
-    mat.matrix[i - 1] = subtractVectors( a.getVector( i ) , b.getVector( i ) )
-
-  return mat
-
-
 # Multiplies matrix by scalar k
 # Returns new matrix
 def scalarMultiplyMatrix ( a , k ):
@@ -119,7 +83,7 @@ def multiplyMatrix ( a , b ):
   
   return mat
 
-
+  
 # Multiplies matrix and vector together
 # Returns new vector
 def multiplyMatrixVector ( mat , vec ):
@@ -159,7 +123,7 @@ def dotProduct ( u , v ):
 # Finds distance between two vectors
 # Returns the distance as float
 def distance ( u , v ):
-  u_minus_v = subtractVectors( u , v )
+  u_minus_v = u - v
 
   return u_minus_v.length()
 
