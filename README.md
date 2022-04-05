@@ -5,7 +5,7 @@ Matrices contains many Python functions to manipulate vectors and matrices, repr
 ## Creator
 Wajih Ahmed (UT EID: wa4432)
 
-## Usage
+## Example
 
 ```python
 from vector import *
@@ -27,6 +27,9 @@ mat.createMatrix( [v1 , v2] )
 # Prints product of matrix and vector
 print( multiplyMatrixVector( mat , vec )
 ```
+
+## Things to Note
+- This project is meant to deal with only integers. Any float or string arguments will be parsed into integers
 
 ## Current Status
 Updated periodically with new functions to represent more concepts involving matrices.
