@@ -1,4 +1,4 @@
-# Used to test the other files in Matrices
+# Personally used to test the other files in Matrices
 
 from vector import *
 from matrix import *
