@@ -145,31 +145,6 @@ class Matrix( object ):
 
     return mat
 
-
-  # Multiplies two matrices together
-  # Returns new matrix
-  def multiplyMatrix ( self , other ):
-    m1 , n1 = self.getDimensions()
-    m2 , n2 = other.getDimensions()
-
-    if m1 != n2 or m2 != n1:
-      print( "Matrices cannot be multiplied together" )
-
-      return
-
-    mat = Matrix( a.getNumOfRows() , b.getNumOfColumns() )
-    m , n = mat.getDimensions()
-
-    for row in range( 1 , m + 1 ):
-      num_list = a.getRow( row )
-      temp_row = Vector( len( num_list ) )
-      temp_row.createVector( num_list )
-
-      for col in range( 1 , n + 1 ):
-        mat.matrix[col - 1].vector[row - 1] = dotProduct( temp_row , b.getVector( col ) )
-  
-    return mat
-
   
   # Checks whether two matrices are equal or not
   # Returns boolean
