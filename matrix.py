@@ -6,6 +6,7 @@ class Matrix( object ):
   
 
   # Creates zero matrix from given number of entries and columns
+  # Input: two integers representing number of rows and columns of matrix
   def __init__ ( self , m = 2 , n = 2 ):
     self.matrix = []
 
@@ -14,6 +15,7 @@ class Matrix( object ):
   
 
   # Creates nonzero matrix from given list of Vectors
+  # Input: list of Vectors with same dimensions as self.matrix
   def createMatrix( self , vec_list ):
     if self.getNumOfColumns() != len( vec_list ):
       print( "Given list does not have same number of vectors as matrix" )
@@ -35,8 +37,15 @@ class Matrix( object ):
     m , n = self.getDimensions()
     self.__init__( m , n )
 
+  
+  # Switches positions of two different rows in the matrix
+  # Input: two integers representing the positions of the two rows
+  def interchangeRows ( self , row1 , row2 ):
+
+
     
   # Returns entry at specified row and column as integer
+  # Input: two integers representing the specific row and column of entry
   def getEntry ( self , m , n ):
     if m <= 0 or n <= 0 or m > self.getNumOfRows() or n > self.getNumOfColumns():
       print( "Out of Range" )
@@ -47,6 +56,7 @@ class Matrix( object ):
 
 
   # Returns list of entries in specified row as list
+  # Input: integer representing position of row
   def getRow ( self , row ):
     if row <= 0 or row > self.getNumOfRows():
       print( "Out of Range" )
@@ -61,6 +71,7 @@ class Matrix( object ):
 
 
   # Returns vector at specified position as Vector object
+  # Input: integer representing position of column
   def getVector ( self , column ):
     if column <= 0 or column > self.getNumOfColumns():
       print( "Out of Range" )
@@ -112,6 +123,7 @@ class Matrix( object ):
 
   # Adds two matrices of same dimensions together
   # Returns new matrix
+  # Input: second Matrix object
   def __add__ ( self , other ):
     m1 , n1 = self.getDimensions()
     m2 , n2 = other.getDimensions()
@@ -130,6 +142,7 @@ class Matrix( object ):
   
   # Subtracts two matrices of same dimensions
   # Returns new matrix
+  # Input: second Matrix object
   def __sub__ ( self , other ):
     m1 , n1 = self.getDimensions()
     m2 , n2 = other.getDimensions()
@@ -148,6 +161,7 @@ class Matrix( object ):
   
   # Checks whether two matrices are equal or not
   # Returns boolean
+  # Input: second Matrix object
   def __eq__ ( self , other ):
     if self.getNumOfColumns() != other.getNumOfColumns():
       return False

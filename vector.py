@@ -6,6 +6,7 @@ class Vector ( object ):
 
 
   # Creates zero vector of given length
+  # Input: integer representing size of vector
   def __init__ ( self , size = 2 ):
     self.vector = []
 
@@ -17,6 +18,7 @@ class Vector ( object ):
 
   
   # Creates nonzero vector using given list of entries
+  # Input: list of integers with same length as self.vector
   def createVector ( self , list ):
     if self.getSize() != len( list ):
       print( "Given list does not have same length as vector" )
@@ -33,11 +35,13 @@ class Vector ( object ):
 
 
   # Adds new entry to vector
+  # Input: integer representing entry to be added
   def addEntry ( self , entry ):
     self.vector.append( entry )
 
   
   # Returns entry at specified position as integer
+  # Input: integer representing position of entry
   def getEntry ( self , index ):
     if index <= 0 or index > self.getSize():
       print( "Out of Range" )
@@ -75,6 +79,7 @@ class Vector ( object ):
 
   # Adds two vectors of same size together
   # Returns new vector
+  # Input: second Vector object
   def __add__ ( self , other ):
     if self.getSize() != other.getSize():
       print( "Vectors cannot be added due to differing sizes" )
@@ -90,6 +95,7 @@ class Vector ( object ):
   
   # Subtracts two vectors of same size
   # Returns new vector
+  # Input: second Vector object
   def __sub__ ( self , other ):
     if self.getSize() != other.getSize():
       print( "Vectors cannot be subtracted due to differing sizes" )
@@ -105,6 +111,7 @@ class Vector ( object ):
 
   # Checks whether two vectors are equal or not
   # Returns boolean
+  # Input: second Vector object
   def __eq__ ( self , other ):
     if self.getSize() != other.getSize():
       return False
