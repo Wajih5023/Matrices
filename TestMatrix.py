@@ -20,10 +20,10 @@ v4.createVector( [1 , 2 , 3] )
 
 mat = Matrix( 3 , 2 )
 mat.createMatrix( [v1 , v2] )
-print( mat )
+#print( mat )
 mat2 = Matrix( 3 , 3 )
 mat2.createMatrix( [v2 , v4 , v3] )
 print( mat2 )
 
-print( mat - mat2 )
-print( mat2 - mat )
+mat2.interchangeRows( 2 , 3 )
+print( mat2 )

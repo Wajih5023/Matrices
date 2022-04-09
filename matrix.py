@@ -41,13 +41,21 @@ class Matrix( object ):
   # Switches positions of two different rows in the matrix
   # Input: two integers representing the positions of the two rows
   def interchangeRows ( self , row1 , row2 ):
+    if not ( 0 < row1 <= self.getNumOfRows() ) or not ( 0 < row2 <= self.getNumOfRows() ):
+      print( "Out of Range" )
+
+      return
+
+    for i in range( 1 , self.getNumOfColumns() + 1 ):
+      temp = self.getEntry( row1 , i )
+      self.matrix[i - 1].setEntry( row1 , self.getEntry( row2 , i ) )
+      self.matrix[i - 1].setEntry( row2 , temp )
 
 
-    
   # Returns entry at specified row and column as integer
   # Input: two integers representing the specific row and column of entry
   def getEntry ( self , m , n ):
-    if m <= 0 or n <= 0 or m > self.getNumOfRows() or n > self.getNumOfColumns():
+    if not ( 0 < m <= self.getNumOfRows() ) or not ( 0 < n <= self.getNumOfColumns() ):
       print( "Out of Range" )
 
       return
@@ -58,7 +66,7 @@ class Matrix( object ):
   # Returns list of entries in specified row as list
   # Input: integer representing position of row
   def getRow ( self , row ):
-    if row <= 0 or row > self.getNumOfRows():
+    if not ( 0 < row <= self.getNumOfRows() ):
       print( "Out of Range" )
 
       return
@@ -73,7 +81,7 @@ class Matrix( object ):
   # Returns vector at specified position as Vector object
   # Input: integer representing position of column
   def getVector ( self , column ):
-    if column <= 0 or column > self.getNumOfColumns():
+    if not ( 0 < column <= self.getNumOfColumns() ):
       print( "Out of Range" )
       
       return

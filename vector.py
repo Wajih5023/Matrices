@@ -39,6 +39,17 @@ class Vector ( object ):
   def addEntry ( self , entry ):
     self.vector.append( entry )
 
+
+  # Changes existing entry in vector
+  # Input: two integers representing position of entry to change and new entry
+  def setEntry ( self , index , entry ):
+    if not ( 0 < index <= self.getSize() ):
+      print( "Out of Range" )
+
+      return
+
+    self.vector[index - 1] = entry
+
   
   # Returns entry at specified position as integer
   # Input: integer representing position of entry
