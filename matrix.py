@@ -16,7 +16,7 @@ class Matrix( object ):
 
   # Creates nonzero matrix from given list of Vectors
   # Input: list of Vectors with same dimensions as self.matrix
-  def createMatrix( self , vec_list ):
+  def createMatrix ( self , vec_list ):
     if self.getNumOfColumns() != len( vec_list ):
       print( "Given list does not have same number of vectors as matrix" )
 
@@ -33,7 +33,7 @@ class Matrix( object ):
   
 
   # Changes current matrix to zero matrix
-  def reset( self ):
+  def reset ( self ):
     m , n = self.getDimensions()
     self.__init__( m , n )
 
