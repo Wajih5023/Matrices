@@ -25,5 +25,5 @@ mat2 = Matrix( 3 , 3 )
 mat2.createMatrix( [v2 , v4 , v3] )
 print( mat2 )
 
-mat2.interchangeRows( 2 , 3 )
+mat2.scalarDivideRow( 4 , 3 )
 print( mat2 )

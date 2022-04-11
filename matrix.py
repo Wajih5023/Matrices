@@ -51,6 +51,35 @@ class Matrix( object ):
       self.matrix[i - 1].setEntry( row1 , self.getEntry( row2 , i ) )
       self.matrix[i - 1].setEntry( row2 , temp )
 
+  
+  # Multiplies row by given scalar k
+  # Input: two integers representing the position of the row and the factor to multiply by
+  def scalarMultiplyRow ( self , row , k ):
+    if not ( 0 < row <= self.getNumOfRows() ):
+      print( "Out of Range" )
+
+      return
+
+    for i in range( 1 , self.getNumOfColumns() + 1 ):
+      self.matrix[i - 1].setEntry( row , self.getEntry( row , i ) * k )
+
+  
+  # Divides row by given scalar k
+  # Input: two integers representing the position of the row and the factor to divide by
+  def scalarDivideRow ( self , row , k ):
+    if not ( 0 < row <= self.getNumOfRows() ):
+      print( "Out of Range" )
+
+      return
+
+    for i in range( 1 , self.getNumOfColumns() + 1 ):
+      if self.getEntry( row , i ) % k != 0:
+        print( "Row cannot be divided by scalar k evenly" )
+
+        return
+
+      self.matrix[i - 1].setEntry( row , int( self.getEntry( row , i ) / k ) )
+
 
   # Returns entry at specified row and column as integer
   # Input: two integers representing the specific row and column of entry
