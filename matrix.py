@@ -123,7 +123,7 @@ class Matrix( object ):
     return self.getVector( 1 ).getSize()
 
 
-  # Returns number of column in matrix as integer
+  # Returns number of columns in matrix as integer
   def getNumOfColumns ( self ):
     return len( self.matrix )
 
