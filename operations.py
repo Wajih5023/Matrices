@@ -1,4 +1,4 @@
-from math import acos
+import math
 from vector import *
 from matrix import *
 
@@ -142,7 +142,7 @@ def distance ( vec1 , vec2 ):
 def angle ( vec1 , vec2 ):
   dot_product = dotProduct( vec1 , vec2 ) / ( vec1.length() * vec2.length() )
 
-  return acos( dot_product )
+  return math.acos( dot_product )
 
 
 # Checks whether two vectors are orhogonal or not

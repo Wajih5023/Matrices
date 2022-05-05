@@ -1,4 +1,4 @@
-from math import sqrt
+import math
 
 
 # Represents a vector
@@ -85,7 +85,7 @@ class Vector ( object ):
     for entry in self.vector:
       dot_product += entry ** 2
 
-    return sqrt( dot_product )
+    return math.sqrt( dot_product )
   
 
   # Adds two vectors of same size together
